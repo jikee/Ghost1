@@ -14,5 +14,6 @@ package com.mph.ghost.ghost1.data;
 public class GlobalData {
 
     public static String url = "";
+    public static String userId ="";
 
 }

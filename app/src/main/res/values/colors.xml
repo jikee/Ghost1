@@ -152,4 +152,36 @@
     <color name="black">#000000</color><!--黑色 -->
     <color name="transparent">#0000</color><!-- 透明 -->
 
+    <color name="style_red">#ff4c41</color>
+    <color name="style_divider_color">#C9C7CD</color>
+    <color name="userindo_text">#616161</color>
+
+    <color name="province_line_border">#C7C7C7</color>
+
+    <color name="main">@android:color/white</color>
+    <color name="text_selected_true">#418DEB</color>
+    <color name="text_selected_false">@android:color/black</color>
+    <color name="divider">#ACACAC</color>
+    <color name="backGray">#E5E5E5</color>
+    <color name="setting_back">#F3F3F3</color>
+    <color name="text_default">#ACACAC</color>
+
+    <color name="titleBar_back">#00B9A2</color>
+    <color name="titleBar_textColor">@color/white</color>
+
+    <color name="color1">#F57936</color>
+    <color name="color2">#02CC9C</color>
+    <color name="color3">#129DD7</color>
+
+
+    <color name="locateBack">#E4F0FF</color>
+
+    <color name="share_back">#E7EFF1</color>
+
+    <color name="share_text">#858889</color>
+
+    <color name="gallery_back">#393A3E</color>
+
+    <color name="chat_input_background">#FFFFFF</color>
+
 </resources>

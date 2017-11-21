@@ -1,13 +1,105 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.mph.ghost.ghost1.fragments.Frag1">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              tools:context="com.mph.ghost.ghost1.fragments.Frag1">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.mph.ghost.ghost1.widget.TitleBar
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleBar_Height"
+        app:background_color="@color/black"
+        app:text_content="首页"
+        app:title_textColor="@color/white"
+        app:title_textSize="@dimen/titleBar_textSize"
+        >
+    </com.mph.ghost.ghost1.widget.TitleBar>
+
+    <com.mph.ghost.ghost1.widget.sivin.Banner
+        android:id="@+id/banner"
+        app:banner_pointContainerBackground="@android:color/transparent"
+        app:banner_pointGravity="bottom|right"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@android:color/darker_gray">
+    </com.mph.ghost.ghost1.widget.sivin.Banner>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/notice"/>
+
+        <com.mph.ghost.ghost1.widget.LooperTextView
+            android:id="@+id/looperview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="11111"/>
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/cadetblue"
+            tools:ignore="Suspicious0dp">
+
+            <TextView
+                android:id="@+id/toDLT"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/violet"
+                android:text="大乐透"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:ignore="Suspicious0dp"/>
+
+            <TextView
+                android:id="@+id/toZC"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/salmon"
+                android:text="足彩"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:ignore="Suspicious0dp"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/toSSQ"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/orange"
+            android:text="双色球"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="Suspicious0dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

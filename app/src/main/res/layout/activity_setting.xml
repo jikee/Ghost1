@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mph.ghost.ghost1.activities.SettingActivity">
+
+
+    <com.mph.ghost.ghost1.widget.TitleBar
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleBar_Height"
+        app:background_color="@color/black"
+        app:leftButton_size="20dp"
+        app:left_img="@drawable/last"
+        app:text_content="设置"
+        app:title_textColor="@color/white"
+        app:title_textSize="@dimen/titleBar_textSize"
+        >
+    </com.mph.ghost.ghost1.widget.TitleBar>
+
+    <Button
+        android:id="@+id/quitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:background="@color/cadetblue"/>
+
+</LinearLayout>

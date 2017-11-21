@@ -5,9 +5,11 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.mph.ghost.ghost1.R;
+import com.mph.ghost.ghost1.aframework.security.Cipher;
 import com.mph.ghost.ghost1.dao.MainDao;
 import com.mph.ghost.ghost1.data.GlobalData;
 import com.mph.ghost.ghost1.utils.AllActivitiesHolder;
@@ -79,9 +81,22 @@ public class LaunchActivity extends BaseActivity {
                     @Override
                     public void accept(JSONObject result) throws Exception {
                         //根据type和code去决定是显示h5还是原生界面
-//                        switch ()
-                        GlobalData.url = "";
-                        JumpActivityUtil.openActivity(LaunchActivity.this,NativeMainActivity.class);
+                        if (result.getInteger("type")==200) {
+                            String base64Data = result.getString("data");
+                            String realData = Cipher.AESDecrypt(base64Data);
+                            JSONObject object = JSON.parseObject(realData);
+                            int flag = object.getInteger("show_url");
+                            if (flag == 1){
+                                GlobalData.url = object.getString("url");
+                                JumpActivityUtil.openActivity(LaunchActivity.this, WebMainActivity.class);
+                            }else{
+                                GlobalData.url = "";
+                                JumpActivityUtil.openActivity(LaunchActivity.this, NativeMainActivity.class);
+                            }
+                        }else {
+                            GlobalData.url = "";
+                            JumpActivityUtil.openActivity(LaunchActivity.this, NativeMainActivity.class);
+                        }
 
                         AllActivitiesHolder.removeAct(LaunchActivity.this);
                     }

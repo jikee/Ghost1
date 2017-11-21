@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.mph.ghost.ghost1.widget.TitleBar
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleBar_Height"
+        app:background_color="@color/black"
+        app:leftButton_size="20dp"
+        app:left_img="@drawable/last"
+        app:right_img="@drawable/share"
+        app:rightButton_size="23dp"
+        app:title_textColor="@color/white"
+        app:title_textSize="@dimen/titleBar_textSize"
+        >
+    </com.mph.ghost.ghost1.widget.TitleBar>
+
+    <LinearLayout
+        android:id="@+id/nullPageTip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/wrong_url"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="呜呜，页面没找到~"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/darkgray"/>
+
+    </LinearLayout>
+
+    <com.github.lzyzsd.jsbridge.BridgeWebView
+        android:visibility="gone"
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+</LinearLayout>

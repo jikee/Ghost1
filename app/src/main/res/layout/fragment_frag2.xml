@@ -1,13 +1,38 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+              android:orientation="vertical"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
              tools:context="com.mph.ghost.ghost1.fragments.Frag2">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.mph.ghost.ghost1.widget.TitleBar
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="222222222"/>
+        android:layout_height="@dimen/titleBar_Height"
+        app:background_color="@color/black"
+        app:text_content="资讯"
+        app:title_textColor="@color/white"
+        app:title_textSize="@dimen/titleBar_textSize"
+        >
+    </com.mph.ghost.ghost1.widget.TitleBar>
 
-</FrameLayout>
+    <com.mph.ghost.ghost1.widget.pull2refresh.PullToRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/refresh_head"/>
+
+        <com.mph.ghost.ghost1.widget.pull2refresh.pullableview.PullableListView
+            android:id="@+id/newsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="0.5dp"
+            android:divider="@color/gray"/>
+
+        <include layout="@layout/load_more"/>
+
+    </com.mph.ghost.ghost1.widget.pull2refresh.PullToRefreshLayout>
+
+</LinearLayout>

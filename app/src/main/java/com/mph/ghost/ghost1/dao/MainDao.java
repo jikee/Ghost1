@@ -4,7 +4,6 @@ package com.mph.ghost.ghost1.dao;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import com.mph.ghost.ghost1.aframework.security.Cipher;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -30,13 +29,12 @@ public class MainDao {
            OkHttpClient okHttpClient = new OkHttpClient();
            RequestBody body = new FormEncodingBuilder().add("json",
                    "").build();
-            String url = "在这填地址";
+            String url = "http://c45c45.com/Lottery_server/get_init_data.php";
            Request request = new Request.Builder().url(url).post(body).build();
            Response response = okHttpClient.newCall(request).execute();
            String responseString = response.body().string();
-           String realData = Cipher.AESDecrypt(responseString);
            if (response.isSuccessful()) {
-                return JSON.parseObject(realData);
+                return JSON.parseObject(responseString);
            } else {
               return new JSONObject();
            }
